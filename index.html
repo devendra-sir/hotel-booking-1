@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking - Room Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <!-- Header Section -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Hotel Booking Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Hotels">
+            </div>
+            <div class="user-profile">
+                <img src="user-avatar.png" alt="User Avatar">
+                <span>John Doe</span>
+            </div>
+        </header>
+
+        <!-- Main Section -->
+        <main>
+            <section class="banner">
+                <h1>Hotel Booking</h1>
+                <p>Book your rooms from VIP and regular options</p>
+            </section>
+
+        <!-- Room Filter Section -->
+                    <section class="room-filter">
+                        <h2>Rooms</h2>
+                        <div class="filters">
+                            <button class="filter-btn" data-filter="all">All Rooms</button>
+                            <button class="filter-btn" data-filter="available">Available Rooms</button>
+                            <button class="filter-btn" data-filter="booked">Booked Rooms</button>
+                        </div>
+        
+                        <div class="room-cards">
+                            <!-- VIP Government Rooms (Booked) -->
+                            <div class="room-card booked vip-govt">
+                                <img src="https://cdn.prod.website-files.com/5c6d6c45eaa55f57c6367749/65045f093c166fdddb4a94a5_x-65045f0266217.webp" alt="VIP Room 1">
+                                <h4>VIP Govt Room 1</h4>
+                                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                                <p>Price: $300/night</p>
+                                <span class="status booked-mark">Booked</span>
+                                <img src="lock-icon.png" alt="Locked" class="lock-icon">
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <!-- Repeat for other VIP Govt Rooms -->
+                            <div class="room-card booked vip-govt">
+                                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/f4/49/dc/executive-room.jpg?w=1200&h=-1&s=1" alt="VIP Room 2">
+                                <h4>VIP Govt Room 2</h4>
+                                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                                <p>Price: $300/night</p>
+                                <span class="status booked-mark">Booked</span>
+                                <img src="lock-icon.png" alt="Locked" class="lock-icon">
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card booked vip-govt">
+                                <img src="https://images.oyoroomscdn.com/uploads/hotel_image/230516/fwbulvvxjcnc.jpg" alt="VIP Room 3">
+                                <h4>VIP Govt Room 3</h4>
+                                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                                <p>Price: $300/night</p>
+                                <span class="status booked-mark">Booked</span>
+                                <img src="lock-icon.png" alt="Locked" class="lock-icon">
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card booked vip-govt">
+                                <img src="https://media.cnn.com/api/v1/images/stellar/prod/4b-mandarin-oriental-jumeira-dubai-the-royal-penthouse-bedroom.jpg?q=w_1110,c_fill" alt="VIP Room 4">
+                                <h4>VIP Govt Room 4</h4>
+                                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                                <p>Price: $300/night</p>
+                                <span class="status booked-mark">Booked</span>
+                                <img src="lock-icon.png" alt="Locked" class="lock-icon">
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <!-- Regular Available Rooms -->
+                            <div class="room-card available">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSci1CIKK2tTl6GRP7L24otIsGhB99bTcKZUg&s" alt="Regular Room 1">
+                                <h4>Regular Room 1</h4>
+                                <p>Rating: ⭐⭐⭐</p>
+                                <p>Price: $100/night</p>
+                                <span class="status available-mark">Available</span>
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card available">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSToZG7UVyvlrxWTVjI-zIGd2oGlSj9MAeLgg&s" alt="Regular Room 2">
+                                <h4>Regular Room 2</h4>
+                                <p>Rating: ⭐⭐⭐⭐</p>
+                                <p>Price: $150/night</p>
+                                <span class="status available-mark">Available</span>
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card available">
+                                <img src="https://content.r9cdn.net/rimg/himg/7b/e1/01/leonardo-104158-160195427-279728.jpg" alt="Regular Room 3">
+                                <h4>Regular Room 3</h4>
+                                <p>Rating: ⭐⭐⭐</p>
+                                <p>Price: $120/night</p>
+                                <span class="status available-mark">Available</span>
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card available">
+                                <img src="https://images.livspace-cdn.com/plain/https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/2017/07/27163532/hotel-style-bedroom-ideas.jpg" alt="Regular Room 4">
+                                <h4>Regular Room 4</h4>
+                                <p>Rating: ⭐⭐⭐⭐</p>
+                                <p>Price: $160/night</p>
+                                <span class="status available-mark">Available</span>
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card available">
+                                <img src="https://media.cnn.com/api/v1/images/stellar/prod/140127103345-peninsula-shanghai-deluxe-mock-up.jpg?q=w_2226,h_1449,x_0,y_0,c_fill" alt="Regular Room 5">
+                                <h4>Regular Room 5</h4>
+                                <p>Rating: ⭐⭐⭐</p>
+                                <p>Price: $100/night</p>
+                                <span class="status available-mark">Available</span>
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+        
+                            <div class="room-card available">
+                                <img src="https://images.oyoroomscdn.com/uploads/hotel_image/230516/fwbulvvxjcnc.jpg" alt="Regular Room 6">
+                                <h4>Regular Room 6</h4>
+                                <p>Rating: ⭐⭐⭐⭐</p>
+                                <p>Price: $140/night</p>
+                                <span class="status available-mark">Available</span>
+                                <button class="btn-book" onclick="openModal()">Book Now</button>
+                            </div>
+                        </div>
+                    </section>
+
+        <!-- Booking Form Modal -->
+<div class="modal" id="bookingModal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Booking Form</h2>
+        <form id="bookingForm">
+            <!-- Your booking form fields here -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="checkIn">Check-In Date:</label>
+            <input type="date" id="checkIn" name="checkIn" required>
+            <label for="checkOut">Check-Out Date:</label>
+            <input type="date" id="checkOut" name="checkOut" required>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+</div>
+
+            <!-- Room Filter Section -->
+            <section class="week-room-search">
+                <div id="room-search">
+                    <h2>Check Room Availability for Next Week</h2>
+                    <input type="date" id="checkin" required>
+                    <input type="date" id="checkout" required>
+                    <button id="search-rooms">Search</button>
+                </div>                
+            </section>
+
+            <!-- Room Availability Section -->
+            <section class="room-availability">
+                <h2>Rooms Availability for Next Week</h2>
+                <div id="room-availability">
+                    <!-- This section will be populated by JavaScript -->
+                </div>
+                <div id="dates-display">
+                    <!-- Check-in and Check-out dates will be displayed here -->
+                </div>
+            </section>            
+
+            <!-- Map Section -->
+            <section class="map">
+                <a href="https://www.google.com/maps"><img src="map.png" alt="Map Placeholder"></a>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <section class="newsletter">
+                <h3>Subscribe for Exclusive Hotel Deals</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <section class="footer-links">
+                <a href="#">Learn</a>
+                <a href="#">Support</a>
+                <a href="#">Help</a>
+                <a href="#">Terms & Privacy</a>
+            </section>
+        </footer>
+
+        <script src="script.js"></script>
+        
+    </div>
+</body>
+</html>
